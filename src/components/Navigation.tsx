@@ -22,7 +22,7 @@ export default function Navigation() {
             <Link
               href="/"
               className={cn(
-                "py-2 px-3 rounded-md text-sm font-medium transition-colors relative text-white ",
+                "py-2 px-3 rounded-md transition-colors relative text-white text-sm font-bold",
                 pathname === '/'
                   ? 'after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent'
                   : 'hover:text-white hover:bg-black/20'
@@ -33,7 +33,7 @@ export default function Navigation() {
             <Link
               href="/create"
               className={cn(
-                "px-3 py-2 rounded-md text-sm font-medium transition-colors relative text-white",
+                "px-3 py-2 rounded-md transition-colors relative text-white text-sm font-bold",
                 pathname === '/create'
                   ? 'after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-accent'
                   : 'hover:bg-black/20'

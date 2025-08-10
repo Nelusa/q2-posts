@@ -9,14 +9,29 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#343A40',
-          dark: '#212529',
-          light: '#6C757D',
+          DEFAULT: 'var(--primary)',
+          dark: 'var(--primary-dark)',
+          light: 'var(--primary-light)',
         },
-        accent: '#D4A373',
+        accent: 'var(--accent)',
         text: {
-          primary: '#495057',
-          secondary: '#6C757D',
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+        },
+        error: {
+          DEFAULT: 'var(--error)',
+          light: 'var(--error-light)',
+          dark: 'var(--error-dark)',
+        },
+        success: {
+          DEFAULT: 'var(--success)',
+          light: 'var(--success-light)',
+          dark: 'var(--success-dark)',
+        },
+        border: {
+          DEFAULT: 'var(--border)',
+          light: 'var(--border-light)',
+          dark: 'var(--border-dark)',
         },
       },
       fontFamily: {

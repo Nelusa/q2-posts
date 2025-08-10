@@ -13,6 +13,15 @@
     --accent: #D4A373;
     --text-primary: #495057;
     --text-secondary: #6C757D;
+    --error: #DC3545;
+    --error-light: #F8D7DA;
+    --error-dark: #721C24;
+    --success: #28A745;
+    --success-light: #D4EDDA;
+    --success-dark: #155724;
+    --border: #CED4DA;
+    --border-light: #E9ECEF;
+    --border-dark: #ADB5BD;
   }
 
   body {
