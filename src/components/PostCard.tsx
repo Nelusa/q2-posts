@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Post } from '@/lib/mock-data';
+import { Post } from '@/lib/api';
 import { Text } from '@/components/ui/Text';
 
 interface PostCardProps {
@@ -13,7 +13,7 @@ export default function PostCard({ post }: PostCardProps) {
         <article className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col">
           <div className="relative h-48 flex-shrink-0">
             <Image
-                src={post.image}
+                src={post.image || "/placeholder.png"}
                 alt={post.title}
                 fill
                 className="object-cover"

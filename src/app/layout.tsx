@@ -5,6 +5,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import {ReactNode} from "react";
+import QueryProvider from "@/components/QueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +23,8 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Q2 - Správa příspěvků",
-  description: "Aplikace pro správu příspěvků",
+  title: "Q2 - Správa článků",
+  description: "Aplikace pro správu článků",
 };
 
 export default function RootLayout({
@@ -36,11 +37,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${lora.variable} antialiased min-h-screen flex flex-col font-lora`}
       >
-        <Navigation />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <QueryProvider>
+          <Navigation />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );
