@@ -24,15 +24,30 @@
     --border-dark: #ADB5BD;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background: var(--background);
     color: var(--foreground);
     font-family: 'Lora', serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
 @layer components {
   .hero-bg {
     background-image: url('/hero.png');
+  }
+  
+  .container-layout {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }
