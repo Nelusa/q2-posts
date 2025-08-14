@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import https from 'https';
+import { PostsListResponse, CreatePostResponse } from '@/lib/types';
 
 const API_TOKEN = process.env.NEXT_PUBLIC_API_TOKEN;
 
-function makeExternalRequest(path: string, method: 'GET' | 'POST', postData: string): Promise<any> {
+function makeExternalRequest(path: string, method: 'GET' | 'POST', postData: string): Promise<PostsListResponse | CreatePostResponse> {
   return new Promise((resolve, reject) => {
     const req = https.request({
       hostname: 'stage73.q2.cz',
@@ -41,7 +42,7 @@ export async function GET() {
         '/posts/list',
         'GET',
         JSON.stringify({ token: API_TOKEN })
-    );
+    ) as PostsListResponse;
 
     if (response.status === 'OK' && response.applications) {
       return NextResponse.json({ posts: response.applications });
@@ -62,7 +63,7 @@ export async function POST(request: NextRequest) {
         '/posts/create',
         'POST',
         JSON.stringify({ token: API_TOKEN, title, content, author })
-    );
+    ) as CreatePostResponse;
 
     if (response.status === 'CREATED' || response.status === 'OK') {
       return NextResponse.json({ success: true });

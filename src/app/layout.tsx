@@ -26,6 +26,10 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Q2 - Správa článků",
   description: "Aplikace pro správu článků",
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({

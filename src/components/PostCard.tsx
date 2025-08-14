@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Post } from '@/lib/api';
+import { Post } from '@/lib/types';
 import { Text } from '@/components/ui/Text';
 
 interface PostCardProps {

@@ -1,5 +1,5 @@
 import { Text } from '@/components/ui/Text';
-import { Post } from '@/lib/api';
+import { Post } from '@/lib/types';
 
 interface DetailContentProps {
   post: Post;

@@ -1,26 +1,6 @@
+import {ApiError, CreatePostData, Post} from "@/lib/types";
+
 const BASE_URL = '/api';
-
-export interface Post {
-  id: number;
-  title: string;
-  content: string;
-  author: string;
-  image?: string;
-  createdAt?: string;
-}
-
-export interface CreatePostData {
-  title: string;
-  content: string;
-  author: string;
-}
-
-class ApiError extends Error {
-  constructor(message: string, public status?: number) {
-    super(message);
-    this.name = 'ApiError';
-  }
-}
 
 async function makeRequest<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const response = await fetch(`${BASE_URL}${endpoint}`, {
